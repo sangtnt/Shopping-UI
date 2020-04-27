@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Category</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/myjs.js"></script>
+<link href="css/scss.css" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Admin</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li class="active"><a href="ListCategoryServlet">Category</a></li>
+                <li><a href="ListProductServlet">Product</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">${sessionScope.admin.username }</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="LogoutServlet">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+	<table class="table table-hover table-bordered table-striped" style="margin: auto">
+		<thead>
+			<tr class="table-head">
+				<th>ID</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		
+			<tr class="info">
+				<td class="catID">5</td>
+				<td class="catName">3</td>
+			</tr>
+	</table>
+	<form method="post">
+		<table>
+		<tr>
+			<td>ID</td>
+			<td><input id="txtid" name="ID" type="text" readonly></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input id="txtname" name="Name" type="text"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Thêm" formaction="AddCategoryServlet">
+				<input type="submit" value="Sửa" formaction="UpdateCategoryServlet">
+				<input type="submit" value="Xóa" formaction="DeleteCategoryServlet" onClick="return confirm('Are you sure?')">
+			</td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>
